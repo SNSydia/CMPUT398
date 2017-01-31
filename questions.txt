@@ -1,0 +1,5 @@
+1. There are N floating point operations performed by the kernel as there are one operation performed for every pair of input elements.
+2. There is 2N global memory reads preformed by the kernel as there is one operation performed for every input element. 
+3. There are N global memory writes as there is one write for every floating point operation. 
+4. there are 32144 bytes transfered from host to device, which equates to '2N * sizeof(float)' bytes on the system. This is because we are transfering both input arrays to the device, so the length of the transfered items is 2N.
+5. There are 16072 bytes transfered from device to host, which equates to 'N * sizeof(float)' bytes on the system. This is because the output array length is length N due to N amount of floating point operations performed. 
